@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Admin</title>
+            <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+         <link rel="stylesheet" href="style/style.css">
+ 
+            <!-- Script File -->
+         <script src="script/HomeScript.js"></script>
+    
+    </head>
+    <body class="adminbody">
+
+        <!-- Navigation bar -->
+        <div id="mySidenav" class="sidenav">
+          <a href="#" class="closebtn">&times;</a>
+          <a href="#" id="userdispid">Users</a>
+          <a href="#" id="productdispid">Products</a>
+          <a href="#" id="useraddbtnid">Add Users</a>
+          <a href="#" id="productaddbtnid">Add Products</a>
+          <a href="admin-login.html" id="">Logout</a>
+        </div>
+        <span class="openbtn">&#9776; open</span>   
+        <h1 class="adminheading">ADMIN CONTROL PANEL</h1>
+        <div class="productsearchdiv">
+            <label>Product Name:</label>
+            <input type="text" placeholder="Search.." class="search">
+            <button id="searchbtn" type="submit">Submit</button>
+        </div>
+
+        <!-- User Display Section -->
+        <div class="userdisplaydiv">
+            <table class="userdisplaytable">
+                <thead>
+                    <tr>
+                        <th>UserID</th>
+                        <th>UserName</th>
+                        <th>UserPhone</th>
+                        <th>UserMAil</th>
+                        <th>UserType</th>
+                    </tr>
+                </thead>
+                <tbody id="userdisptable"></tbody>
+            </table>
+        </div>
+
+        <!-- Product Display Section -->
+        <div class="productdisplaydiv">
+            <table class="productdisplaytable">
+                <thead>
+                    <tr>
+                        <th>ProductID</th>
+                        <th>ProductName</th>
+                        <th>Brand</th>
+                        <th>Items-in-Stock</th>
+                        <th>Price</th>
+                        <th>Unit of Measure</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="productdisptable"></tbody>
+            </table>
+        </div>
+
+        <!-- Product Add Section -->
+        <section id="addproduct_id" class="addproductclass">
+            <div class="registerdiv">
+                <div class="leftimagediv">
+                </div>
+                <div class="registrationBox">
+                    <input type="text" id="productname_id" placeholder="ProductName">
+                    <input type="number" id="quantity_id" placeholder="Quantity">
+                    <input type="number" id="price_id" placeholder="Rate">
+                    <input type="text" id="unitofmeasure_id" placeholder="Unit of Measure">
+                    <textarea type="text" id="description_id" placeholder="Description"></textarea>
+                    <center><button class="insertbtn">Add Product</button></center>
+                </div>
+                <span class="closeproduct">&times</span>
+            </div>
+        </section>
+
+        <!-- User Add Section -->
+        <section id="adduser_id" class="adduserclass">
+            <div class="registerdiv">
+                <div class="leftimagediv">
+                </div>
+                <div class="registrationBox">
+                    <input type="text" id="username_id" placeholder="Username">
+                    <input type="tel" id="userphone_id" placeholder="Phone number">
+                    <input type="email" id="useremail_id" placeholder="E-mail">
+                    <input type="password" id="password_id" placeholder="Password">
+                    <select name="seladmin" id="seladminid">
+                        <option value="admin">Admin</option>
+                        <option value="user">User</option>
+                    </select>
+                    <center><button class="registerbtn">Register</button></center>
+                </div>
+                <span class="closeuser">&times</span>
+            </div>
+        </section>
+        <section id="updatedeleteusersection">
+            <span class="closeupdatedeleteuser">&times</span>
+            <div id="updatedeleteuserdiv">
+                <h3>Manage User</h3>
+                <label id="useridlabel">User ID :</label>
+                <input id="inputupdatedeleteuserid" type="number" min="0" readonly/>
+                <br />
+                <label id="usernamelabel">User Name :</label>
+                <input id="inputupdatedeleteusername" type="text" />
+                <br />
+                <label id="userphonelabel">User Phone :</label>
+                <input id="inputupdatedeleteuserphone" type="tel" />
+                <br />
+                <label id="usermaillabel">User Email :</label>
+                <input id="inputupdatedeleteusermail" type="email"/>
+                <br />
+                <label id="usertypelabel">Type of User :</label>
+                <input id="inputupdatedeleteusertype" type="text" />
+                <br />
+                <button id="upusrbtn">Update</button>
+                <button id="removeusrbtn">Delete</button>
+            </div>
+        </section>
+        <section id="updatedeleteproductsection">
+            <span class="closeupdatedeleteproduct">&times</span>
+            <div id="updatedeleteproductdiv">
+                <h3>Manage Product</h3>
+                <label id="productidlabel">Product ID :</label>
+                <input id="inputupdatedeleteproductid" type="number" min="0" readonly/>
+                <br />
+                <label id="productnamelabel">Product Name :</label>
+                <input id="inputupdatedeleteproductname" type="text"/>
+                <br />
+                <label id="brandlabel">Brand :</label>
+                <input id="inputupdatedeletebrand" type="text"/>
+                <br />
+                <label id="instockupdatelabel">Items-in-Stock :</label>
+                <input id="inputupdatedeleteinstock" type="number" min="0" />
+                <br />
+                <label id="priceupdatelabel">Price :</label>
+                <input id="inputupdatedeleteprice" type="number" min="0" />
+                <br />
+                <label id="unitofmeasureupdatelabel">Unit of Measure :</label>
+                <input id="inputupdatedeleteunitofmeasure" type="text"/>
+                <br />
+                <label id="descriptionupdatelabel">Description :</label>
+                <input id="inputupdatedeletedescription" type="text" />
+                <br />
+                <button id="upprodbtn">Update</button>
+                <button id="removeprodbtn">Delete</button>
+            </div>
+        </section>
+    <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+</html> 

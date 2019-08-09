@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>InventoryManagmentSystem</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style/style.css">
+
+        <!-- Script File -->
+        <script src="script/UserScript.js"></script>
+    </head>
+    <body class="userbody">
+        <a href="admin-login.html"><input class="logoutbtn" type="submit" value="Logout"/></a>
+        <h1 class="userheading">Manage Your Inventory Here</h1>
+        <div class="productsearchuserdiv">
+            <label class="usersearchlabel">Product Name:</label>
+            <input type="search" placeholder="Search Here..." id="productsearch" />
+            <button id="searchproductbtn">Submit</button>
+        </div>
+        <div class="productdiv">
+            <table class="producttable">
+                <thead>
+                    <tr>
+                       <th>ProductID</th>
+                       <th>ProductName</th>
+                       <th>Brand</th>
+                        <th>Items-in-Stock</th>
+                       <th>Price</th>
+                       <th>Unit of Measure</th>
+                       <th>Description</th>
+                     </tr>
+                </thead>
+                <tbody id="productdisptable"></tbody>
+             </table>
+         </div>
+        <section id="updatesection">
+            <span class="closeupdate">&times</span>
+            <div id="updatediv">
+                <h3>Update Product</h3>
+                    <label id="productnamelabel"></label>
+                    <br />
+                    <label id="instocklabel"></label>
+                    <br />
+                    <label id="updateinputlabel">New Changes:</label>
+                    <input id="inputupdateproduct" type="number" min="0" />
+                    <br />
+                    <button id="addstockbtn">Stock IN</button>
+                    <button id="removestockbtn">Stock Out</button>
+            </div>
+        </section>
+    </body>
+</html>
